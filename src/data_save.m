@@ -23,6 +23,6 @@ data.ckt = ckt;
 ymdStr = num2str(yyyymmdd(data.run_date));
 [h,mi,s] = hms(data.run_date);
 
-saveText = [ckt.name '_' ymdStr(3:end) '_' num2str(h) '-' num2str(mi)];
+saveText = ['so_' ckt.name '_' ymdStr(3:end) '_' num2str(h) '-' num2str(mi)];
 
 save(['../res/' saveText '.mat'], 'data');
