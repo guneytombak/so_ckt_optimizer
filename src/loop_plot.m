@@ -46,9 +46,18 @@ plot([mu_C mu_C], [-.5 .5], '-r'); % mean
 plot([(mu_C+sigma_C) (mu_C+sigma_C)], [-.25 .25], '--m'); % mean + sigma
 plot([(mu_C-sigma_C) (mu_C-sigma_C)], [-.25 .25], '--m'); % mean - sigma
 
-xlim([-1 0]); ylim([-1 1]); 
+cost_vec = specs.cost_weight.*(2*(~specs.highY)-1);
+sum_cost_vec = sum(cost_vec);
 
-xlabel(['Cost: ' num2str(specs.cost_weight.*(2*(~specs.highY)-1))]);
+if sum_cost_vec > 0
+    xlim([0 sum_cost_vec]);
+else
+    xlim([sum_cost_vec 0]);  
+end
+
+ylim([-1 1]);
+
+xlabel(['Cost: ' num2str(cost_vec)]);
 title(['Selection Regarding Cost with T = ' num2str(specs.temp)]);
 grid on
 
