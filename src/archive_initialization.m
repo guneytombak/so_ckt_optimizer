@@ -6,5 +6,6 @@ arch.eli = cell(1,noGen);
 arch.X = zeros(noGen,N,noX);
 arch.Y = zeros(noGen,N,noY);
 arch.U = zeros(noGen,N,noU);
+arch.C = cell(1,noGen);
 
 arch.outOfRange = zeros(noGen,noX);

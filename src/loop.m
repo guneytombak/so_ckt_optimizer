@@ -82,11 +82,13 @@ while gen < noGen
         arch.X(gen,:,:) = sX;
         arch.Y(gen,:,:) = sY;
         arch.U(gen,:,:) = sU;
+        arch.C{gen} = C;
         arch.outOfRange(gen,:) = outOfRange;
     else
         arch.ini.X = sX;
         arch.ini.Y = sY;
         arch.ini.U = sU;
+        arch.ini.C = C;
         arch.ini.outOfRange = outOfRange;
     end
 

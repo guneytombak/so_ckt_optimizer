@@ -7,7 +7,7 @@ pm_func = @gamzePM;
 %% Naming
 
 naming.name = "One Stage Diff-Amp with 6 Transistors";
-naming.exp = "PM high 45, look for high Gain";
+naming.exp = "PM high 45, look for high Gain, with Ib_min = 5e-6";
 naming.dimens = ["$Gain \ (dB)$" "$Bandwidth_{log_{10}} \ [Hz]$" ...
     "$Power [W]$"];
 naming.input = ["LM1" "LM2" "LM3" "WM1" "WM2" "WM3" "Ib"]; % input names
@@ -39,7 +39,7 @@ L = ckt.dL; W = ckt.dW;
 
 lims.xLo = [L L L W W W 5e-6];  
 lims.xUp = [10*L 10*L 10*L 150*W 150*W 150*W 1e-3]; 
-lims.yLo = [30 NaN NaN];
+lims.yLo = [32 NaN NaN];
 lims.yUp = [42 NaN NaN];
 lims.uLo = [45 NaN];
 lims.uUp = [NaN NaN];
@@ -57,8 +57,8 @@ specs.noXYU = [noX noY noU];
 
 specs.cost_weight = [1 0 0];
 specs.temp_if = [1 .1];
-specs.cool_rate = 0.98;
-specs.markov_cl = 20;
+specs.cool_rate = 0.95;
+specs.markov_cl = 0;
 
 specs.cost2prob = @(C,T) exp((mean(C) - C)/T);
 
