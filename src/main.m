@@ -2,16 +2,21 @@ close all;
 clear all;
 format long;
 
+%% Figure Parameters
+
 pause_duration = 1e-5;
-numClose = 20;
+act_fig_no = 10;
+AZ = -60; EL = 45;
+fig_pos_vec = [0.2 0.2 0.6 0.6];
+fig_flag = 1;
 
 set(0,'defaulttextInterpreter','latex');
 
 %% File/Load Name
 
-file_name = 'amp1';
-N = 100; if mod(N,2), N = N + 1; end
-noGen = NaN; 
+file_name = 'so_amp_gain';
+N = 30; if mod(N,2), N = N + 1; end
+noGen = 20; 
 
 load_name = '';
 addGen = 100;

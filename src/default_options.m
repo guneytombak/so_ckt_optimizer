@@ -5,3 +5,4 @@ if isnan(specs.noGen)
 end
 
 specs.cost_weight = specs.cost_weight ./ norm(specs.cost_weight);
+naming.file_name = file_name;
